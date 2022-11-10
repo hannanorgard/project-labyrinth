@@ -4,6 +4,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { gameProgress } from 'reducers/game'
 import { Loading } from './Loading';
+import { Styled } from './Gameplay.styled';
 
 export const Gameplay = () => {
   const dispatch = useDispatch();
@@ -19,22 +20,25 @@ export const Gameplay = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        <div>
-          <p>Description: {progress.description}</p>
+        <Styled.Container>
           <div>
-            {progress.actions.map((item) => (
-              <>
-                <p>{item.description}</p>
-                <button
-                  type="button"
-                  onClick={
-                    () => onClickAction(item.type, item.direction)
-                  }> Go {item.direction}
-                </button>
-              </>
-            ))}
+            <Styled.GamePlayText>Description: {progress.description}</Styled.GamePlayText>
+            <div>
+              {progress.actions.map((item) => (
+                <>
+                  <Styled.GamePlayText>{item.description}</Styled.GamePlayText>
+                  <Styled.GamePlayButton
+                    type="button"
+                    onClick={
+                      () => onClickAction(item.type, item.direction)
+                    }> Go {item.direction}
+                  </Styled.GamePlayButton>
+                </>
+              ))}
+            </div>
           </div>
-        </div>
+        </Styled.Container>
+        // Here the footer needs to go but eslint hates me....!!!
       )}
     </>
   )
