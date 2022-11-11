@@ -34,6 +34,7 @@ export const Username = () => {
         <Styled.FooterText>
           Made by Kim Svensson, Nick Jensen & Hanna Nörgård
           Background by https://ansimuz.com/
+          Loading gif by https://twitter.com/HernanZh
         </Styled.FooterText>
       </Styled.Footer>
     </div>

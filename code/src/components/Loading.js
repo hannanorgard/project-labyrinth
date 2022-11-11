@@ -1,53 +1,20 @@
 import React from 'react';
-import Lottie from 'lottie-react';
-import animationData from '../lottie/duck'
+import { Styled } from './Loading.styled';
 
-export const Loading = () => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
-  };
-
+const Loading = () => {
   return (
-    <div>
-      <p>Loading...</p>
-      <div>
-        <Lottie
-          options={defaultOptions}
-          height={400}
-          width={400} />
-      </div>
-    </div>
-  );
-}
+    <Styled.Container>
+      <Styled.LoadingGif src="assets/running.webp" alt="running gif" />
+    </Styled.Container>
+  )
+};
 
-//   return (
-//     <div>
-//       <p>Loading...</p>
-//     </div>
-//   )
-// }
+export default Loading;
 
-//   const defaultOptions = {
-//       loop: true,
-//       autoplay: true,
-//       animationData: animationData,
-//       rendererSettings: {
-//         preserveAspectRatio: "xMidYMid slice"
-//       }
-//     };
-
-//   return (
-//     <div>
-//       <Lottie
-//     options={defaultOptions}
-//         height={400}
-//         width={400}
-//       />
-//     </div>
-//   );
-// }
+// import React from 'react';
+// import { useSelector } from 'react-redux';
+// const LoadingIndicator = () => {
+//   const isLoading = useSelector((state) => state.game.isLoading);
+//   return <>{isLoading && <div> LOADING </div>}</>;
+// };
+// export default LoadingIndicator;
